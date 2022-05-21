@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "578089057732",
+    "project_id": "repasos-metodos-numericos",
+    "storage_bucket": "repasos-metodos-numericos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:578089057732:android:721a9b2c4de99dce86f891",
+        "android_client_info": {
+          "package_name": "com.example.repasosmetodosnumericos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "578089057732-6bpjdtirg76bdaqh0c9022jpp894atup.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARYNKnQsXs-z6E5MckWQrwnTMbkuia1Gw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "578089057732-6bpjdtirg76bdaqh0c9022jpp894atup.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuPrincipal">
+
+    <TextView
+        android:id="@+id/tvMenuPrincipalBienvenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/carrois_gothic"
+        android:text="@string/bienvenido_mira_el_resumen_de_tu_perfil"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#03A9F4"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMenuPrincipalBienvenido">
+
+        <ImageView
+            android:id="@+id/ivMenuPrinipalIconoPerfil"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/icono_perfil"
+            app:srcCompat="@drawable/perfil"
+            tools:ignore="ImageContrastCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvMenuPrincipalUsuarioNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carrois_gothic"
+                android:text="@string/nombre"
+                android:textColor="#263238"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMenuPrincipalUsuarioPuntuacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carrois_gothic"
+                android:text="@string/puntuaci_n"
+                android:textColor="#263238"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMenuPrincipalUsuarioPruebasContestadas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carrois_gothic"
+                android:text="@string/pruebas_contestadas"
+                android:textColor="#263238"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvMenuPrincipalNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carrois_gothic"
+                android:text="@string/nombre"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMenuPrincipalPuntuacion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carrois_gothic"
+                android:text="@string/puntuaci_n"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvMenuPrincipalPruebasContestadas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carrois_gothic"
+                android:text="@string/pruebas_contestadas"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMenuPrincipalInvitacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/carrois_gothic"
+        android:text="@string/repasa_alguna_de_las_unidades_de_aprendizaje"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUnidad1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#CDDC39"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMenuPrincipalInvitacion">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivUnidad1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/uno"
+                app:srcCompat="@drawable/one_icon" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalUnidad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/unidad"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalRealizado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/realizado"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalPuntacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/puntuaci_n"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad1Nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/interpolaci_n"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad1Realizado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="Si o No" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad1Puntuacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="100 pts" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUnidad2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#CDDC39"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvUnidad1">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivUnidad2"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/uno"
+                app:srcCompat="@drawable/dos_icono" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalUnidad2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/unidad"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalRealizado2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/realizado"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalPuntacion2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/puntuaci_n"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad2Nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/ecuaciones_no_lineales"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad2Realizado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="Si o No" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad2Puntuacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="100 pts" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUnidad3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#CDDC39"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvUnidad2">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivUnidad3"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/uno"
+                app:srcCompat="@drawable/three_icon" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalUnidad3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/unidad"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalRealizado3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/realizado"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalPuntacion3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/puntuaci_n"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad3Nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/ecuaciones_lineales"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad3Realizado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="Si o No" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad3Puntuacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="100 pts" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUnidad4"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#CDDC39"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvUnidad3">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivUnidad4"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/uno"
+                app:srcCompat="@drawable/four_icono" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalUnidad4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/unidad"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalRealizado4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/realizado"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalPuntacion4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/puntuaci_n"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad4Nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/m_nimos_cuadrados"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad4Realizado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="Si o No" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad4Puntuacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="100 pts" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUnidad5"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#CDDC39"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvUnidad4">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivUnidad5"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/uno"
+                app:srcCompat="@drawable/five_icono" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalUnidad5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/unidad"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalRealizado5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/realizado"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalPuntacion5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/puntuaci_n"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad5Nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/integraci_n"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad5Realizado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="Si o No" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad5Puntuacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="100 pts" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvUnidad6"
+        android:layout_width="363dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#CDDC39"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvUnidad5">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivUnidad6"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/uno"
+                app:srcCompat="@drawable/seis_icono" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalUnidad6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/unidad"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalRealizado6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/realizado"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrincipalPuntacion6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/puntuaci_n"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad6Nombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:text="@string/ec_diferenciales_ordinarias"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad6Realizado"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="Si o No" />
+
+                <TextView
+                    android:id="@+id/tvMenuPrinipalUnidad6Puntuacion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carrois_gothic"
+                    android:textColor="#1B5E20"
+                    android:textSize="16sp"
+                    tools:text="100 pts" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#F44336"
+        android:contentDescription="@string/volver"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_revert"
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

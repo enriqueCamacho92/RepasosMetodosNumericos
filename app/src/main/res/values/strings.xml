@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Repasos Metodos Numericos</string>
+    <string name="ingresa_a_tu_cuenta">Ingresa a tu cuenta</string>
+    <string name="logotipo_app">Logotipo de la Aplicación</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="acceder">Acceder</string>
+    <string name="no_tienes_cuenta">--------¿No tienes cuenta?--------</string>
+    <string name="registrarse">Registrarse</string>
+    <string name="ingresa_tu_correo_electr_nico">Ingresa tu correo electrónico</string>
+    <string name="ingresa_una_contrase_a">Ingresa una contraseña</string>
+    <string name="confirmar_contrase_a">Confirmar Contraseña</string>
+    <string name="ingresa_tu_nombre">Ingresa tu Nombre</string>
+    <string name="nombre">Nombre</string>
+    <string name="bienvenido_mira_el_resumen_de_tu_perfil">Bienvenido, mira el resumen de tu Perfil</string>
+    <string name="pruebas_contestadas">Pruebas Contestadas</string>
+    <string name="puntuaci_n">Puntuación</string>
+    <string name="icono_perfil">icono perfil</string>
+    <string name="repasa_alguna_de_las_unidades_de_aprendizaje">Repasa alguna de las Unidades de Aprendizaje!</string>
+    <string name="unidad">Unidad</string>
+    <string name="realizado">Realizado</string>
+    <string name="uno">Uno</string>
+    <string name="interpolaci_n">Interpolación</string>
+    <string name="ecuaciones_no_lineales">Ecuaciones No Lineales</string>
+    <string name="ecuaciones_lineales">Ecuaciones Lineales</string>
+    <string name="m_nimos_cuadrados">Mínimos Cuadrados</string>
+    <string name="ec_diferenciales_ordinarias">Ec. Diferenciales Ordinarias</string>
+    <string name="integraci_n">Integración</string>
+    <string name="volver">Volver</string>
 </resources>
