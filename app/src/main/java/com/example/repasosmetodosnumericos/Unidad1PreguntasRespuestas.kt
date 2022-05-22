@@ -3,12 +3,14 @@ package com.example.repasosmetodosnumericos
 object Unidad1PreguntasRespuestas {
     var preguntas = arrayOf(
         R.drawable.quiz1preg1,
-        R.drawable.quiz1preg2
+        R.drawable.quiz1preg2,
+        R.drawable.quiz1preg3
     )
-    var opciones = arrayOf(arrayOf("3.1416", "1325.156", "145.156", "1645.26"),
-                            arrayOf("Si", "No", "145.69","DB"))
+    var opciones = arrayOf(arrayOf("g(x)=1.404007668", "g(x)=1.304007668", "g(x)=1.308007668", "g(x)=2.304007668"),
+                            arrayOf("g(x)=1.714444444", "g(x)=2.444444444", "g(x)=2.714444444","g(x)=2.814444444"),
+                            arrayOf("g(x)=2.714444444", "g(x)=2.444444444", "g(x)=2.714444444","g(x)=2.814444444"))
     var respuestasCorrectas = arrayOf(
-        "3.1416",
-        "Si"
+        "g(x)=1.304007668",
+        "g(x)=2.714444444",
     )
 }

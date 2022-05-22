@@ -37,4 +37,5 @@
     <string name="pregunta_aqui">Pregunta Aqui</string>
     <string name="respuesta_c">Respuesta C</string>
     <string name="respuesta_d">Respuesta D</string>
+    <string name="aprobado">Aprobado</string>
 </resources>
