@@ -27,4 +27,14 @@
     <string name="ec_diferenciales_ordinarias">Ec. Diferenciales Ordinarias</string>
     <string name="integraci_n">Integración</string>
     <string name="volver">Volver</string>
+    <string name="tiempo_para_resolver">----- Tiempo para Resolver -----</string>
+    <string name="ltimo_puntaje_obtenido">----- Último Puntaje Obtenido -----</string>
+    <string name="comenzar">Comenzar</string>
+    <string name="preguntas_totales">Preguntas Totales:</string>
+    <string name="respuesta_a">Respuesta A</string>
+    <string name="respuesta_b">Respuesta B</string>
+    <string name="seleccionar">Seleccionar</string>
+    <string name="pregunta_aqui">Pregunta Aqui</string>
+    <string name="respuesta_c">Respuesta C</string>
+    <string name="respuesta_d">Respuesta D</string>
 </resources>
