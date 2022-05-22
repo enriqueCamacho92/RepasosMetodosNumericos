@@ -7,8 +7,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.repasosmetodosnumericos.databinding.ActivityUnidad3QuizBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 class Unidad3Quiz : AppCompatActivity(), View.OnClickListener {
     var score=0
@@ -41,6 +43,10 @@ class Unidad3Quiz : AppCompatActivity(), View.OnClickListener {
         if (clickedButton.id ==R.id.btnSubmmitQuiz){
             if(respuestaSeleccionada.equals(Unidad3PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice])){
                 score++
+                Toast.makeText(this,"Correcto!", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this,"Incorrecto, la respuesta es: "+Unidad3PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice],Toast.LENGTH_SHORT).show()
             }
             preguntaActualIndice++
             cargarNuevaPregunta()
@@ -66,18 +72,20 @@ class Unidad3Quiz : AppCompatActivity(), View.OnClickListener {
         var pasarStatus = ""
         if(score>preguntasTotales*0.60){
             pasarStatus = "Pasaste"
+            quiz3="Si"
         }
         else{
             pasarStatus = "Reprobaste"
         }
         val alertDialogBuilder = AlertDialog.Builder(this)
-        alertDialogBuilder.setTitle(pasarStatus).setMessage("Puntaje obtenido: "+score+" de "+preguntasTotales)
+        alertDialogBuilder.setTitle(pasarStatus).setMessage("Aciertos: "+score+" de "+preguntasTotales)
             .setPositiveButton("Terminar", DialogInterface.OnClickListener { dialogInterface, i -> salir() })
             .setCancelable(false).show()
     }
 
     fun salir(){
-        //Actualizar DB
+        quiz3Score=(score*20).toFloat()
+        pruebasContestadas++
         //Reiniciar Variables
         score=0
         preguntaActualIndice=0

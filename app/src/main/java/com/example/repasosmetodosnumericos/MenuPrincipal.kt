@@ -6,6 +6,21 @@ import android.os.Bundle
 import com.example.repasosmetodosnumericos.databinding.ActivityMenuPrincipalBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
+var globalScore: Float = 0f
+var quiz1Score: Float = 0f
+var quiz2Score: Float = 0f
+var quiz3Score: Float = 0f
+var quiz4Score: Float = 0f
+var quiz5Score: Float = 0f
+var quiz6Score: Float = 0f
+var pruebasContestadas: Int = 0
+var quiz1: String = "No"
+var quiz2: String = "No"
+var quiz3: String = "No"
+var quiz4: String = "No"
+var quiz5: String = "No"
+var quiz6: String = "No"
+
 class MenuPrincipal : AppCompatActivity() {
     private lateinit var binding : ActivityMenuPrincipalBinding
     private lateinit var firebaseDB : FirebaseFirestore
@@ -16,21 +31,24 @@ class MenuPrincipal : AppCompatActivity() {
         firebaseDB = FirebaseFirestore.getInstance()
         firebaseDB.collection("users").document(actualUserEmail).get().addOnSuccessListener {
             binding.tvMenuPrincipalNombre.setText(it.get("nombre") as String?)
-            binding.tvMenuPrincipalPuntuacion.setText(it.get("puntuacion") as String? + " pts")
-            binding.tvMenuPrincipalPruebasContestadas.setText(it.get("tests") as String?)
-            binding.tvMenuPrinipalUnidad1Puntuacion.setText(it.get("unit1puntuacion") as String? + " pts")
-            binding.tvMenuPrinipalUnidad1Realizado.setText(it.get("unit1") as String?)
-            binding.tvMenuPrinipalUnidad2Puntuacion.setText(it.get("unit2puntuacion") as String? + " pts")
-            binding.tvMenuPrinipalUnidad2Realizado.setText(it.get("unit2") as String?)
-            binding.tvMenuPrinipalUnidad3Puntuacion.setText(it.get("unit3puntuacion") as String? + " pts")
-            binding.tvMenuPrinipalUnidad3Realizado.setText(it.get("unit3") as String?)
-            binding.tvMenuPrinipalUnidad4Puntuacion.setText(it.get("unit4puntuacion") as String? + " pts")
-            binding.tvMenuPrinipalUnidad4Realizado.setText(it.get("unit4") as String?)
-            binding.tvMenuPrinipalUnidad5Puntuacion.setText(it.get("unit5puntuacion") as String? + " pts")
-            binding.tvMenuPrinipalUnidad5Realizado.setText(it.get("unit5") as String?)
-            binding.tvMenuPrinipalUnidad6Puntuacion.setText(it.get("unit6puntuacion") as String? + " pts")
-            binding.tvMenuPrinipalUnidad6Realizado.setText(it.get("unit6") as String?)
         }
+
+        globalScore=(quiz1Score+ quiz2Score+ quiz3Score+ quiz4Score+ quiz5Score+ quiz6Score)/6
+
+        binding.tvMenuPrincipalPuntuacion.text = globalScore.toString() + " pts"
+        binding.tvMenuPrincipalPruebasContestadas.text = pruebasContestadas.toString()
+        binding.tvMenuPrinipalUnidad1Puntuacion.text = quiz1Score.toString() + " pts"
+        binding.tvMenuPrinipalUnidad1Realizado.text = quiz1
+        binding.tvMenuPrinipalUnidad2Puntuacion.text = quiz2Score.toString() + " pts"
+        binding.tvMenuPrinipalUnidad2Realizado.text = quiz2
+        binding.tvMenuPrinipalUnidad3Puntuacion.text = quiz3Score.toString() + " pts"
+        binding.tvMenuPrinipalUnidad3Realizado.text = quiz3
+        binding.tvMenuPrinipalUnidad4Puntuacion.text = quiz4Score.toString() + " pts"
+        binding.tvMenuPrinipalUnidad4Realizado.text = quiz4
+        binding.tvMenuPrinipalUnidad5Puntuacion.text = quiz5Score.toString() + " pts"
+        binding.tvMenuPrinipalUnidad5Realizado.text = quiz5
+        binding.tvMenuPrinipalUnidad6Puntuacion.text = quiz6Score.toString() + " pts"
+        binding.tvMenuPrinipalUnidad6Realizado.text = quiz6
 
         binding.btnMenuPrincipalVolver.setOnClickListener{
             startActivity(Intent(this, LogIn::class.java))

@@ -15,8 +15,10 @@ class Unidad6Inicio : AppCompatActivity() {
         setContentView(binding.root)
         firebaseDB = FirebaseFirestore.getInstance()
 
-        firebaseDB.collection("users").document(actualUserEmail).get().addOnSuccessListener {
-            binding.tvUnidad6Puntaje.setText(it.get("unit6puntuacion") as String? + " pts")
+        binding.tvUnidad6Puntaje.text = quiz6Score.toString() + " pts"
+
+        firebaseDB.collection("app").document("quiz6").get().addOnSuccessListener {
+            binding.tvUnidad6Tiempo.setText(it.get("tiempo") as String?)
         }
 
         binding.btnUnidad6Volver.setOnClickListener {

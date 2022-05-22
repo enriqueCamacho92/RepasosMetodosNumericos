@@ -1,6 +1,5 @@
 package com.example.repasosmetodosnumericos
 
-import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
@@ -8,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.repasosmetodosnumericos.databinding.ActivityUnidad1QuizBinding
 
@@ -23,13 +23,11 @@ class Unidad1Quiz : AppCompatActivity(), View.OnClickListener{
         binding = ActivityUnidad1QuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         binding.btnRespuestaA.setOnClickListener(this)
         binding.btnRespuestaB.setOnClickListener(this)
         binding.btnRespuestaC.setOnClickListener(this)
         binding.btnRespuestaD.setOnClickListener(this)
         binding.btnSubmmitQuiz.setOnClickListener(this)
-
         binding.tvPreguntasTotales.setText("Preguntas totales: "+preguntasTotales)
         cargarNuevaPregunta();
     }
@@ -43,6 +41,10 @@ class Unidad1Quiz : AppCompatActivity(), View.OnClickListener{
         if (clickedButton.id ==R.id.btnSubmmitQuiz){
             if(respuestaSeleccionada.equals(Unidad1PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice])){
                 score++
+                Toast.makeText(this,"Correcto!",Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this,"Incorrecto, la respuesta es: "+Unidad1PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice],Toast.LENGTH_SHORT).show()
             }
             preguntaActualIndice++
             cargarNuevaPregunta()
@@ -68,18 +70,20 @@ class Unidad1Quiz : AppCompatActivity(), View.OnClickListener{
         var pasarStatus = ""
         if(score>preguntasTotales*0.60){
             pasarStatus = "Pasaste"
+            quiz1="Si"
         }
         else{
             pasarStatus = "Reprobaste"
         }
         val alertDialogBuilder = AlertDialog.Builder(this)
-        alertDialogBuilder.setTitle(pasarStatus).setMessage("Puntaje obtenido: "+score+" de "+preguntasTotales)
+        alertDialogBuilder.setTitle(pasarStatus).setMessage("Aciertos: "+score+" de "+preguntasTotales)
             .setPositiveButton("Terminar",DialogInterface.OnClickListener { dialogInterface, i -> salir() })
             .setCancelable(false).show()
     }
 
     fun salir(){
-        //Actualizar DB
+        quiz1Score=(score*20).toFloat()
+        pruebasContestadas++
         //Reiniciar Variables
         score=0
         preguntaActualIndice=0

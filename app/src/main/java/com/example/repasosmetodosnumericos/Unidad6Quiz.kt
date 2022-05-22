@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.example.repasosmetodosnumericos.databinding.ActivityUnidad6QuizBinding
 
@@ -41,6 +42,10 @@ class Unidad6Quiz : AppCompatActivity(), View.OnClickListener {
         if (clickedButton.id == R.id.btnSubmmitQuiz) {
             if (respuestaSeleccionada.equals(Unidad6PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice])) {
                 score++
+                Toast.makeText(this,"Correcto!", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this,"Incorrecto, la respuesta es: "+Unidad6PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice],Toast.LENGTH_SHORT).show()
             }
             preguntaActualIndice++
             cargarNuevaPregunta()
@@ -66,12 +71,13 @@ class Unidad6Quiz : AppCompatActivity(), View.OnClickListener {
         var pasarStatus = ""
         if (score > preguntasTotales * 0.60) {
             pasarStatus = "Pasaste"
+            quiz6="Si"
         } else {
             pasarStatus = "Reprobaste"
         }
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle(pasarStatus)
-            .setMessage("Puntaje obtenido: " + score + " de " + preguntasTotales)
+            .setMessage("Aciertos: " + score + " de " + preguntasTotales)
             .setPositiveButton(
                 "Terminar",
                 DialogInterface.OnClickListener { dialogInterface, i -> salir() })
@@ -79,7 +85,8 @@ class Unidad6Quiz : AppCompatActivity(), View.OnClickListener {
     }
 
     fun salir() {
-        //Actualizar DB
+        quiz6Score=(score*20).toFloat()
+        pruebasContestadas++
         //Reiniciar Variables
         score = 0
         preguntaActualIndice = 0
