@@ -39,5 +39,25 @@ class MenuPrincipal : AppCompatActivity() {
         binding.cvUnidad1.setOnClickListener {
             startActivity(Intent(this, Unidad1Inicio::class.java))
         }
+
+        binding.cvUnidad2.setOnClickListener {
+            startActivity(Intent(this, Unidad2Inicio::class.java))
+        }
+
+        binding.cvUnidad3.setOnClickListener {
+            startActivity(Intent(this, Unidad3Inicio::class.java))
+        }
+
+        binding.cvUnidad4.setOnClickListener {
+            startActivity(Intent(this, Unidad4Inicio::class.java))
+        }
+
+        binding.cvUnidad5.setOnClickListener {
+            startActivity(Intent(this, Unidad5Inicio::class.java))
+        }
+
+        binding.cvUnidad6.setOnClickListener {
+            startActivity(Intent(this, Unidad6Inicio::class.java))
+        }
     }
 }

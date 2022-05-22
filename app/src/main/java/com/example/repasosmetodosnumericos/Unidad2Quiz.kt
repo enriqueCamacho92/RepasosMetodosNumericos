@@ -1,6 +1,5 @@
 package com.example.repasosmetodosnumericos
 
-import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
@@ -9,20 +8,19 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
-import com.example.repasosmetodosnumericos.databinding.ActivityUnidad1QuizBinding
+import com.example.repasosmetodosnumericos.databinding.ActivityUnidad2QuizBinding
 
-class Unidad1Quiz : AppCompatActivity(), View.OnClickListener{
+class Unidad2Quiz : AppCompatActivity(), View.OnClickListener {
     var score=0
-    var preguntasTotales=Unidad1PreguntasRespuestas.preguntas.size
+    var preguntasTotales=Unidad2PreguntasRespuestas.preguntas.size
     var preguntaActualIndice = 0
     var respuestaSeleccionada = ""
-    private lateinit var binding: ActivityUnidad1QuizBinding
+    private lateinit var binding: ActivityUnidad2QuizBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityUnidad1QuizBinding.inflate(layoutInflater)
+        binding = ActivityUnidad2QuizBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
 
         binding.btnRespuestaA.setOnClickListener(this)
         binding.btnRespuestaB.setOnClickListener(this)
@@ -39,9 +37,9 @@ class Unidad1Quiz : AppCompatActivity(), View.OnClickListener{
         binding.btnRespuestaB.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         binding.btnRespuestaC.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         binding.btnRespuestaD.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
-        var clickedButton:Button = p0 as Button
+        var clickedButton: Button = p0 as Button
         if (clickedButton.id ==R.id.btnSubmmitQuiz){
-            if(respuestaSeleccionada.equals(Unidad1PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice])){
+            if(respuestaSeleccionada.equals(Unidad2PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice])){
                 score++
             }
             preguntaActualIndice++
@@ -57,11 +55,11 @@ class Unidad1Quiz : AppCompatActivity(), View.OnClickListener{
             terminarQuiz()
             return
         }
-        binding.ivPregunta.setBackgroundResource(Unidad1PreguntasRespuestas.preguntas[preguntaActualIndice])
-        binding.btnRespuestaA.setText(Unidad1PreguntasRespuestas.opciones[preguntaActualIndice][0])
-        binding.btnRespuestaB.setText(Unidad1PreguntasRespuestas.opciones[preguntaActualIndice][1])
-        binding.btnRespuestaC.setText(Unidad1PreguntasRespuestas.opciones[preguntaActualIndice][2])
-        binding.btnRespuestaD.setText(Unidad1PreguntasRespuestas.opciones[preguntaActualIndice][3])
+        binding.ivPregunta.setBackgroundResource(Unidad2PreguntasRespuestas.preguntas[preguntaActualIndice])
+        binding.btnRespuestaA.setText(Unidad2PreguntasRespuestas.opciones[preguntaActualIndice][0])
+        binding.btnRespuestaB.setText(Unidad2PreguntasRespuestas.opciones[preguntaActualIndice][1])
+        binding.btnRespuestaC.setText(Unidad2PreguntasRespuestas.opciones[preguntaActualIndice][2])
+        binding.btnRespuestaD.setText(Unidad2PreguntasRespuestas.opciones[preguntaActualIndice][3])
     }
 
     fun terminarQuiz(){
@@ -74,7 +72,7 @@ class Unidad1Quiz : AppCompatActivity(), View.OnClickListener{
         }
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle(pasarStatus).setMessage("Puntaje obtenido: "+score+" de "+preguntasTotales)
-            .setPositiveButton("Terminar",DialogInterface.OnClickListener { dialogInterface, i -> salir() })
+            .setPositiveButton("Terminar", DialogInterface.OnClickListener { dialogInterface, i -> salir() })
             .setCancelable(false).show()
     }
 
@@ -83,8 +81,6 @@ class Unidad1Quiz : AppCompatActivity(), View.OnClickListener{
         //Reiniciar Variables
         score=0
         preguntaActualIndice=0
-        startActivity(Intent(this, Unidad1Inicio::class.java))
+        startActivity(Intent(this, Unidad2Inicio::class.java))
     }
-
 }
-
