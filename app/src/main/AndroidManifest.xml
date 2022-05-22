@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RepasosMetodosNumericos">
         <activity
+            android:name=".Unidad6Quiz"
+            android:exported="false" />
+        <activity
+            android:name=".Unidad5Quiz"
+            android:exported="false" />
+        <activity
+            android:name=".Unidad4Quiz"
+            android:exported="false" />
+        <activity
+            android:name=".Unidad6Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".Unidad5Inicio"
+            android:exported="false" />
+        <activity
+            android:name=".Unidad4Inicio"
+            android:exported="false" />
+        <activity
             android:name=".Unidad3Quiz"
             android:exported="false" />
         <activity
