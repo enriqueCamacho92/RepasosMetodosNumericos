@@ -17,6 +17,8 @@ class Unidad3Quiz : AppCompatActivity(), View.OnClickListener {
     var preguntasTotales=Unidad3PreguntasRespuestas.preguntas.size
     var preguntaActualIndice = 0
     var respuestaSeleccionada = ""
+    var list: MutableList<Int> = (0..4).toMutableList()
+    var random: Boolean = false
     private lateinit var binding: ActivityUnidad3QuizBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +31,8 @@ class Unidad3Quiz : AppCompatActivity(), View.OnClickListener {
         binding.btnRespuestaC.setOnClickListener(this)
         binding.btnRespuestaD.setOnClickListener(this)
         binding.btnSubmmitQuiz.setOnClickListener(this)
-
         binding.tvPreguntasTotales.setText("Preguntas totales: "+preguntasTotales)
+        if (random==false){randomizador()}
         cargarNuevaPregunta();
     }
 
@@ -41,12 +43,12 @@ class Unidad3Quiz : AppCompatActivity(), View.OnClickListener {
         binding.btnRespuestaD.setBackgroundColor(Color.parseColor("#FFFFEB3B"))
         var clickedButton: Button = p0 as Button
         if (clickedButton.id ==R.id.btnSubmmitQuiz){
-            if(respuestaSeleccionada.equals(Unidad3PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice])){
+            if(respuestaSeleccionada.equals(Unidad3PreguntasRespuestas.respuestasCorrectas[list[preguntaActualIndice]])){
                 score++
                 Toast.makeText(this,"Correcto!", Toast.LENGTH_SHORT).show()
             }
             else{
-                Toast.makeText(this,"Incorrecto, la respuesta es: "+Unidad3PreguntasRespuestas.respuestasCorrectas[preguntaActualIndice],Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Incorrecto, la respuesta es: "+Unidad3PreguntasRespuestas.respuestasCorrectas[list[preguntaActualIndice]],Toast.LENGTH_SHORT).show()
             }
             preguntaActualIndice++
             cargarNuevaPregunta()
@@ -61,11 +63,11 @@ class Unidad3Quiz : AppCompatActivity(), View.OnClickListener {
             terminarQuiz()
             return
         }
-        binding.ivPregunta.setBackgroundResource(Unidad3PreguntasRespuestas.preguntas[preguntaActualIndice])
-        binding.btnRespuestaA.setText(Unidad3PreguntasRespuestas.opciones[preguntaActualIndice][0])
-        binding.btnRespuestaB.setText(Unidad3PreguntasRespuestas.opciones[preguntaActualIndice][1])
-        binding.btnRespuestaC.setText(Unidad3PreguntasRespuestas.opciones[preguntaActualIndice][2])
-        binding.btnRespuestaD.setText(Unidad3PreguntasRespuestas.opciones[preguntaActualIndice][3])
+        binding.ivPregunta.setBackgroundResource(Unidad3PreguntasRespuestas.preguntas[list[preguntaActualIndice]])
+        binding.btnRespuestaA.setText(Unidad3PreguntasRespuestas.opciones[list[preguntaActualIndice]][0])
+        binding.btnRespuestaB.setText(Unidad3PreguntasRespuestas.opciones[list[preguntaActualIndice]][1])
+        binding.btnRespuestaC.setText(Unidad3PreguntasRespuestas.opciones[list[preguntaActualIndice]][2])
+        binding.btnRespuestaD.setText(Unidad3PreguntasRespuestas.opciones[list[preguntaActualIndice]][3])
     }
 
     fun terminarQuiz(){
@@ -90,5 +92,10 @@ class Unidad3Quiz : AppCompatActivity(), View.OnClickListener {
         score=0
         preguntaActualIndice=0
         startActivity(Intent(this, Unidad3Inicio::class.java))
+    }
+
+    fun randomizador(){
+        list.shuffle()
+        random=true
     }
 }
